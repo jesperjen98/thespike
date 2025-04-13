@@ -37,7 +37,7 @@ const Home = () => {
           data-aos="zoom-in"
           data-aos-delay="100"
           data-aos-duration="1000"
-          src={"/the spike.svg"}
+          src={"./the spike.svg"}
           alt="temp"
           width={2000}
           height={200}

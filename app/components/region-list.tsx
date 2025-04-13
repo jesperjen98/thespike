@@ -22,7 +22,7 @@ const RegionList = () => {
       }}
     >
       <Box paddingY={1}>
-        <Image src={"./vct.svg"} alt="temp" width={350} height={40}></Image>
+        <Image src={"./VCT.svg"} alt="temp" width={350} height={40}></Image>
       </Box>
 
       <Region></Region>
