@@ -1,15 +1,10 @@
 import { Button, Paper } from "@mui/material";
 import React, { useState } from "react";
 import Match from "./match";
-import NewsStory from "./news-story";
-import {
-  ArrowRight,
-  KeyboardDoubleArrowRight,
-  PlayArrow,
-} from "@mui/icons-material";
+import { KeyboardDoubleArrowRight } from "@mui/icons-material";
 
 const MatchList = () => {
-  const darkC = "#1E1E1E";
+  // const darkC = "#1E1E1E";
   const mainC = "#F04D59";
 
   const lightC = "#181818";

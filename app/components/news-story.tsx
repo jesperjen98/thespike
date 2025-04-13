@@ -1,20 +1,5 @@
-import {
-  Card,
-  CardMedia,
-  CardContent,
-  Typography,
-  CardActions,
-  Button,
-  Box,
-  CardActionArea,
-  Paper,
-  Container,
-  Avatar,
-  Chip,
-  Divider,
-  Modal,
-} from "@mui/material";
-import React, { useState } from "react";
+import { Box, Divider, Paper, Typography } from "@mui/material";
+import { useState } from "react";
 
 export interface News {
   title?: string;
@@ -28,19 +13,13 @@ const temp =
 
 const NewsStory = ({ title = "Lizard", content = temp }: News) => {
   const darkC = "#1E1E1E";
-  const lightC = "#181818";
+  //const lightC = "#181818";
   const [isHover, setIsHover] = useState(false);
-
-  // For modal
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   return (
     <Paper
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      onClick={handleOpen}
       elevation={isHover ? 8 : 1}
       sx={{
         // Clickable
@@ -56,7 +35,7 @@ const NewsStory = ({ title = "Lizard", content = temp }: News) => {
         paddingY: 1,
 
         // Background image
-        backgroundImage: "url(/Jawgemo.jpg)",
+        backgroundImage: "url(./Jawgemo.jpg)",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundColor: darkC,

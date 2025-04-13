@@ -1,16 +1,6 @@
 "use client";
-import { MouseRounded } from "@mui/icons-material";
-import {
-  Box,
-  Button,
-  Container,
-  Fade,
-  Paper,
-  Slide,
-  SvgIconTypeMap,
-  Typography,
-} from "@mui/material";
-import React, { ReactElement, useState } from "react";
+import { Box, Button, Fade, Typography } from "@mui/material";
+import { ReactElement, useState } from "react";
 
 type NavButtonProps = {
   name: string;

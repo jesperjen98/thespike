@@ -1,6 +1,5 @@
 import { CheckBox } from "@mui/icons-material";
 import { Box, Typography } from "@mui/material";
-import { info } from "console";
 import React from "react";
 
 const mainC = "#F04D59";

@@ -1,16 +1,14 @@
-import { Container, Typography, Box, Divider } from "@mui/material";
-import React from "react";
+import { Box, Container, Typography } from "@mui/material";
 import Image from "next/image";
 
-import NewsStory, { News } from "../components/news-story";
-import { title } from "process";
 import MatchList from "../components/match-list";
+import NewsStory, { News } from "../components/news-story";
 
 const NewsPage = () => {
   const cGap = 2;
   const darkC = "#0E0E10";
-  const mediumC = "#1E1E1E";
-  const lightC = "#181818";
+  //const mediumC = "#1E1E1E";
+  //const lightC = "#181818";
   const news: News[] = [
     {
       title:
@@ -34,7 +32,7 @@ const NewsPage = () => {
   return (
     <Container maxWidth="lg" sx={{ backgroundColor: darkC, paddingBottom: 20 }}>
       <Box display={"flex"} flexDirection={"row"} paddingBottom={2}>
-        <Image src={"/logo.svg"} alt="temp" width={80} height={80}></Image>
+        <Image src={"./logo.svg"} alt="temp" width={80} height={80}></Image>
         <Box paddingLeft={3}>
           <Typography variant="h5" color="white" sx={{ fontWeight: "bold" }}>
             Valorant esports news
@@ -62,8 +60,9 @@ const NewsPage = () => {
             ></NewsStory>
           </Box>
           <Box display={"flex"} flexDirection={"row"} gap={cGap}>
-            {news.slice(1).map((_news, index) => (
+            {news.slice(1).map((_news: News, index: number) => (
               <NewsStory
+                key={index}
                 title={_news.title}
                 content={_news.content}
               ></NewsStory>

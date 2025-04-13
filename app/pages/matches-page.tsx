@@ -1,30 +1,18 @@
-import {
-  Avatar,
-  Box,
-  Container,
-  Divider,
-  List,
-  ListItem,
-  ListItemAvatar,
-  ListItemText,
-  Paper,
-  Typography,
-} from "@mui/material";
-import React, { useState } from "react";
+import { Box, Container, Paper, Typography } from "@mui/material";
 import Image from "next/image";
-import MatchList from "../components/match-list";
-import RegionList from "../components/region-list";
+import { useState } from "react";
 import ExpandedMatchList from "../components/expanded-match-list";
+import RegionList from "../components/region-list";
 
 const MatchesPage = () => {
   const lightC = "#1E1E1E";
-  const darkC = "#181818";
+  //const darkC = "#181818";
   const [isHover, setIsHover] = useState(false);
 
   return (
     <Box
       sx={{
-        backgroundImage: "url(valorant2_fade.png)",
+        backgroundImage: "url(./valorant2_fade.png)",
         height: "100vh",
         backgroundPosition: "center",
         backgroundSize: "cover",
@@ -33,7 +21,7 @@ const MatchesPage = () => {
     >
       <Container maxWidth={"lg"} sx={{ paddingTop: 10 }}>
         <Box display={"flex"} flexDirection={"row"} paddingBottom={2}>
-          <Image src={"/logo.svg"} alt="temp" width={80} height={80}></Image>
+          <Image src={"./logo.svg"} alt="temp" width={80} height={80}></Image>
           <Box paddingLeft={3}>
             <Typography variant="h5" color="white" sx={{ fontWeight: "bold" }}>
               The latest games

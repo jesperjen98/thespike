@@ -1,20 +1,13 @@
-import {
-  KeyboardDoubleArrowDown,
-  KeyboardDoubleArrowRight,
-  Padding,
-  Refresh,
-} from "@mui/icons-material";
-import { Paper, Button, Typography, Box, Fab } from "@mui/material";
-import React, { useState } from "react";
-import Match from "./match";
+import { Refresh } from "@mui/icons-material";
+import { Button, Typography, Box } from "@mui/material";
+import React from "react";
 import ExpandedMatch from "./expanded-match";
 
 const ExpandedMatchList = () => {
-  const time = "07:00";
   const lightC = "#1E1E1E";
-  const darkC = "#181818";
+  // const darkC = "#181818";
   const mainC = "#F04D59";
-  const [isHover, setIsHover] = useState(false);
+  //const [isHover, setIsHover] = useState(false);
 
   return (
     <Box

@@ -1,7 +1,7 @@
-import { Box, Divider, Fade, Paper, Typography } from "@mui/material";
-import React, { useState } from "react";
+import { PlayArrow } from "@mui/icons-material";
+import { Box, Paper, Typography } from "@mui/material";
 import Image from "next/image";
-import { ArrowRight, MouseOutlined, PlayArrow } from "@mui/icons-material";
+import { useState } from "react";
 
 const Match = () => {
   const time = "07:00";
@@ -48,12 +48,12 @@ const Match = () => {
             <Typography fontWeight={"bold"} color="white">
               100T
             </Typography>
-            <Image src={"/logo.svg"} alt="temp" width={30} height={30}></Image>
+            <Image src={"./logo.svg"} alt="temp" width={30} height={30}></Image>
             <Typography fontWeight={"bold"} color={mainC} sx={{ paddingX: 1 }}>
               /
             </Typography>
 
-            <Image src={"/logo.svg"} alt="temp" width={30} height={30}></Image>
+            <Image src={"./logo.svg"} alt="temp" width={30} height={30}></Image>
             <Typography fontWeight={"bold"} color="white">
               2GAME
             </Typography>
@@ -80,7 +80,7 @@ const Match = () => {
         alignItems="center"
         paddingX={1}
       >
-        <Image src={"/vct.png"} alt="temp" width={12} height={12}></Image>
+        <Image src={"./vct.png"} alt="temp" width={12} height={12}></Image>
 
         <Typography fontWeight={"bold"} variant="body2" color={"grey"}>
           VCT EMEA • Week 3

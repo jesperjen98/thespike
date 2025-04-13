@@ -1,30 +1,20 @@
-import React from "react";
-
+import { Box, Card, CardMedia, Divider } from "@mui/material";
 import Container from "@mui/material/Container";
-import { Box, Button, Card, CardMedia, Divider, Paper } from "@mui/material";
-import GameSelection from "./game-selection";
 import NavButton from "./nav-button";
 
 import {
   Assessment,
   AssessmentOutlined,
-  CalendarMonth,
   CalendarMonthOutlined,
   CalendarMonthRounded,
   Chat,
   ChatBubbleOutline,
   EmojiEmotions,
   EmojiEmotionsOutlined,
-  EmojiEvents,
-  HelpCenterOutlined,
-  HelpCenterRounded,
   Mouse,
   MouseOutlined,
-  MouseRounded,
-  NewspaperOutlined,
   ReceiptLong,
   ReceiptLongOutlined,
-  ReceiptLongRounded,
   SportsEsports,
   SportsEsportsOutlined,
 } from "@mui/icons-material";
@@ -89,7 +79,7 @@ const Nav = () => {
       {/* FIXME: Change from 2 cards to Images? */}
       <Box display={"flex"} gap={1}>
         <Card elevation={0} sx={{ flex: 1, bgcolor: "transparent" }}>
-          <CardMedia component="img" alt="green iguana" image="/logo.svg" />
+          <CardMedia component="img" alt="the spike icon" image="./logo.svg" />
         </Card>
         <Card
           elevation={0}
@@ -102,8 +92,8 @@ const Nav = () => {
         >
           <CardMedia
             component="img"
-            alt="green iguana"
-            image="/logo-text-white.svg"
+            alt="thespike"
+            image="./logo-text-white.svg"
           />
         </Card>
       </Box>

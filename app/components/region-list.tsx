@@ -1,17 +1,16 @@
-import { Box, Paper } from "@mui/material";
-import React, { useState } from "react";
+import { Box } from "@mui/material";
 import Image from "next/image";
 
 import Region from "./region";
 
 const RegionList = () => {
-  const lightC = "#1E1E1E";
-  const darkC = "#181818";
-  const [selectedRegion, setSelectedRegion] = useState("");
+  //const lightC = "#1E1E1E";
+  //const darkC = "#181818";
+  //const [selectedRegion, setSelectedRegion] = useState("");
 
-  const handleRegionClick = (region: string) => {
-    setSelectedRegion(region);
-  };
+  // const handleRegionClick = (region: string) => {
+  //   setSelectedRegion(region);
+  // };
 
   return (
     <Box
@@ -23,7 +22,7 @@ const RegionList = () => {
       }}
     >
       <Box paddingY={1}>
-        <Image src={"/vct.svg"} alt="temp" width={350} height={40}></Image>
+        <Image src={"./vct.svg"} alt="temp" width={350} height={40}></Image>
       </Box>
 
       <Region></Region>

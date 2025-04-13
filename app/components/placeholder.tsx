@@ -1,8 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
-import Image from "next/image";
 import Button from "@mui/material/Button";
+import Image from "next/image";
+import { useState } from "react";
 
 const click = () => {
   console.log("test");
@@ -23,7 +23,7 @@ const Placeholder = () => {
       </Button>
       <Image
         className="dark:invert"
-        src="/next.svg"
+        src="./next.svg"
         alt="Next.js logo"
         width={180}
         height={38}
@@ -51,7 +51,7 @@ const Placeholder = () => {
         >
           <Image
             className="dark:invert"
-            src="/vercel.svg"
+            src="./vercel.svg"
             alt="Vercel logomark"
             width={20}
             height={20}

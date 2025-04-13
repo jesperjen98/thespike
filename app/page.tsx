@@ -1,16 +1,14 @@
 "use client";
+import { KeyboardDoubleArrowDown } from "@mui/icons-material";
+import { Box, Fab } from "@mui/material";
 import Image from "next/image";
-import { Box, Fab, Typography } from "@mui/material";
-import { CheckBox, KeyboardDoubleArrowDown } from "@mui/icons-material";
+import { useEffect } from "react";
+import CheckBoxInfo from "./components/check-box-info";
+import MatchesPage from "./pages/matches-page";
+import NewsPage from "./pages/news-page";
 
 import Aos from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
-import CheckBoxInfo from "./components/check-box-info";
-import NewsStory from "./components/news-story";
-import Matches from "./pages/news-page";
-import NewsPage from "./pages/news-page";
-import MatchesPage from "./pages/matches-page";
 
 const mainC = "#F04D59";
 
@@ -24,7 +22,7 @@ const Home = () => {
     <Box>
       <Box
         sx={{
-          backgroundImage: "url(valorant_fade.png)",
+          backgroundImage: "url(./valorant_fade.png)",
           height: "100vh",
           display: "flex",
           flexDirection: "column",

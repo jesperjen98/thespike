@@ -1,23 +1,9 @@
-import React, { useState } from "react";
-import {
-  Box,
-  Button,
-  Divider,
-  Fab,
-  Fade,
-  Paper,
-  Typography,
-} from "@mui/material";
+import { PlayArrow } from "@mui/icons-material";
+import { Box, Button, Paper, Typography } from "@mui/material";
 import Image from "next/image";
-import {
-  ArrowRight,
-  KeyboardDoubleArrowDown,
-  MouseOutlined,
-  PlayArrow,
-} from "@mui/icons-material";
+import { useState } from "react";
 
 const ExpandedMatch = () => {
-  const time = "07:00";
   const lightC = "#1E1E1E";
   const darkC = "#181818";
   const mainC = "#F04D59";
@@ -28,6 +14,7 @@ const ExpandedMatch = () => {
     <Paper
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      elevation={isHover ? 8 : 2}
       sx={{
         bgcolor: lightC,
         display: "flex",
@@ -61,12 +48,12 @@ const ExpandedMatch = () => {
           <Typography variant="h5" fontWeight={"bold"} color="white">
             100T
           </Typography>
-          <Image src={"/logo.svg"} alt="temp" width={60} height={60}></Image>
+          <Image src={"./logo.svg"} alt="temp" width={60} height={60}></Image>
           <Typography variant="h4" color={mainC} sx={{ paddingX: 1 }}>
             /
           </Typography>
 
-          <Image src={"/logo.svg"} alt="temp" width={60} height={60}></Image>
+          <Image src={"./logo.svg"} alt="temp" width={60} height={60}></Image>
           <Typography variant="h5" fontWeight={"bold"} color="white">
             2GAME
           </Typography>
@@ -81,7 +68,7 @@ const ExpandedMatch = () => {
         alignItems="center"
         padding={1}
       >
-        <Image src={"/vct.png"} alt="temp" width={16} height={16}></Image>
+        <Image src={"./vct.png"} alt="temp" width={16} height={16}></Image>
 
         <Typography fontWeight={"bold"} variant="body2" color={"grey"}>
           VCT EMEA • Week 3
