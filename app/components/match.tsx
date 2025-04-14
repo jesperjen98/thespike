@@ -2,12 +2,11 @@ import { PlayArrow } from "@mui/icons-material";
 import { Box, Paper, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import { theme } from "../theme";
 
 const Match = () => {
   const time = "07:00";
-  const lightC = "#1E1E1E";
-  const darkC = "#181818";
-  const mainC = "#F04D59";
+  const imgSize = 30;
 
   const [isHover, setIsHover] = useState(false);
 
@@ -15,8 +14,9 @@ const Match = () => {
     <Paper
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
+      elevation={isHover ? 4 : 1}
       sx={{
-        bgcolor: lightC,
+        bgcolor: theme.main,
         display: "flex",
         flexDirection: "column",
         cursor: "pointer",
@@ -40,22 +40,36 @@ const Match = () => {
             transition: "opacity 0.3s",
           }}
         >
-          <Box display={"flex"} gap={1} paddingY={1}>
-            <Typography fontWeight={"bold"} color="white">
+          <Box display={"flex"} gap={1} paddingY={1} alignItems={"center"}>
+            <Typography fontWeight={"bold"} color={theme.heading}>
               {time}
             </Typography>
 
-            <Typography fontWeight={"bold"} color="white">
-              100T
+            <Typography fontWeight={"bold"} color={theme.heading}>
+              TLN
             </Typography>
-            <Image src={"./logo.svg"} alt="temp" width={30} height={30}></Image>
-            <Typography fontWeight={"bold"} color={mainC} sx={{ paddingX: 1 }}>
+            <Image
+              src={"./talon.avif"}
+              alt="talon"
+              width={imgSize}
+              height={imgSize}
+            ></Image>
+            <Typography
+              fontWeight={"bold"}
+              color={theme.highlight}
+              sx={{ paddingX: 1 }}
+            >
               /
             </Typography>
 
-            <Image src={"./logo.svg"} alt="temp" width={30} height={30}></Image>
-            <Typography fontWeight={"bold"} color="white">
-              2GAME
+            <Image
+              src={"./zeta.avif"}
+              alt="zeta"
+              width={imgSize}
+              height={imgSize}
+            ></Image>
+            <Typography fontWeight={"bold"} color={theme.heading}>
+              ZTA
             </Typography>
           </Box>
         </Box>
@@ -66,14 +80,14 @@ const Match = () => {
             opacity: isHover ? 1 : 0,
             transition: "opacity 0.3s",
             position: "absolute",
-            color: mainC,
+            color: theme.highlight,
             fontSize: "2rem", // Adjust size if needed
           }}
         />
       </Box>
 
       <Box
-        bgcolor={darkC}
+        bgcolor={theme.secondary}
         display={"flex"}
         flexDirection={"row"}
         justifyContent="space-between"
@@ -82,10 +96,10 @@ const Match = () => {
       >
         <Image src={"./vct.png"} alt="temp" width={12} height={12}></Image>
 
-        <Typography fontWeight={"bold"} variant="body2" color={"grey"}>
+        <Typography fontWeight={"bold"} variant="body2" color={theme.text}>
           VCT EMEA • Week 3
         </Typography>
-        <Typography fontWeight={"bold"} variant="body2" color={"grey"}>
+        <Typography fontWeight={"bold"} variant="body2" color={theme.text}>
           Bo3
         </Typography>
       </Box>

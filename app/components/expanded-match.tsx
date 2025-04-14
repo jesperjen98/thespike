@@ -2,21 +2,18 @@ import { PlayArrow } from "@mui/icons-material";
 import { Box, Button, Paper, Typography } from "@mui/material";
 import Image from "next/image";
 import { useState } from "react";
+import { theme } from "../theme";
 
 const ExpandedMatch = () => {
-  const lightC = "#1E1E1E";
-  const darkC = "#181818";
-  const mainC = "#F04D59";
-
   const [isHover, setIsHover] = useState(false);
 
   return (
     <Paper
       onMouseEnter={() => setIsHover(true)}
       onMouseLeave={() => setIsHover(false)}
-      elevation={isHover ? 8 : 2}
+      elevation={isHover ? 8 : 4}
       sx={{
-        bgcolor: lightC,
+        bgcolor: theme.main,
         display: "flex",
         flexDirection: "column",
         cursor: "pointer",
@@ -30,7 +27,7 @@ const ExpandedMatch = () => {
         padding={2}
         position={"relative"}
       >
-        <Button variant="contained" sx={{ backgroundColor: mainC }}>
+        <Button variant="contained" sx={{ backgroundColor: theme.highlight }}>
           <PlayArrow />
         </Button>
 
@@ -46,22 +43,22 @@ const ExpandedMatch = () => {
           }}
         >
           <Typography variant="h5" fontWeight={"bold"} color="white">
-            100T
+            TLN
           </Typography>
-          <Image src={"./logo.svg"} alt="temp" width={60} height={60}></Image>
-          <Typography variant="h4" color={mainC} sx={{ paddingX: 1 }}>
+          <Image src={"./talon.avif"} alt="temp" width={60} height={60}></Image>
+          <Typography variant="h4" color={theme.highlight} sx={{ paddingX: 1 }}>
             /
           </Typography>
 
-          <Image src={"./logo.svg"} alt="temp" width={60} height={60}></Image>
+          <Image src={"./zeta.avif"} alt="temp" width={60} height={60}></Image>
           <Typography variant="h5" fontWeight={"bold"} color="white">
-            2GAME
+            ZTA
           </Typography>
         </Box>
       </Box>
       {/* Subcontext box */}
       <Box
-        bgcolor={darkC}
+        bgcolor={theme.secondary}
         display={"flex"}
         flexDirection={"row"}
         justifyContent="space-between"

@@ -1,13 +1,10 @@
-import { Button, Paper } from "@mui/material";
-import React, { useState } from "react";
-import Match from "./match";
 import { KeyboardDoubleArrowRight } from "@mui/icons-material";
+import { Button, Paper } from "@mui/material";
+import { useState } from "react";
+import { theme } from "../theme";
+import Match from "./match";
 
 const MatchList = () => {
-  // const darkC = "#1E1E1E";
-  const mainC = "#F04D59";
-
-  const lightC = "#181818";
   const [isHover, setIsHover] = useState(false);
 
   return (
@@ -16,7 +13,7 @@ const MatchList = () => {
       onMouseLeave={() => setIsHover(false)}
       elevation={isHover ? 8 : 1}
       sx={{
-        bgcolor: lightC,
+        bgcolor: theme.main,
         display: "flex",
         flexDirection: "column",
         padding: "5px",
@@ -31,7 +28,11 @@ const MatchList = () => {
       <Match></Match>
       <Match></Match>
       <Button
-        sx={{ fontWeight: "bold", color: "white", bgcolor: mainC }}
+        sx={{
+          fontWeight: "bold",
+          color: theme.heading,
+          bgcolor: theme.highlight,
+        }}
         variant="contained"
       >
         All games

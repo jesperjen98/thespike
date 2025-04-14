@@ -1,11 +1,10 @@
 import { Box } from "@mui/material";
 import Image from "next/image";
 
+import { theme } from "../theme";
 import Region from "./region";
 
 const RegionList = () => {
-  //const lightC = "#1E1E1E";
-  //const darkC = "#181818";
   //const [selectedRegion, setSelectedRegion] = useState("");
 
   // const handleRegionClick = (region: string) => {
@@ -19,10 +18,13 @@ const RegionList = () => {
         flexDirection: "column",
         gap: 1,
         padding: 2,
+        border: 2,
+
+        borderColor: theme.highlight,
       }}
     >
       <Box paddingY={1}>
-        <Image src={"./VCT.svg"} alt="temp" width={350} height={40}></Image>
+        <Image src={"./VCT.svg"} alt="vct" width={350} height={40}></Image>
       </Box>
 
       <Region></Region>

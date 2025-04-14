@@ -1,14 +1,26 @@
-import { Box, Container, Typography } from "@mui/material";
+import {
+  Box,
+  Container,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
+import Aos from "aos";
 import Image from "next/image";
 
+import { useEffect } from "react";
 import MatchList from "../components/match-list";
 import NewsStory, { News } from "../components/news-story";
+import { theme } from "../theme";
 
 const NewsPage = () => {
+  useEffect(() => {
+    Aos.init({});
+  }, []);
+
   const cGap = 2;
-  const darkC = "#0E0E10";
-  //const mediumC = "#1E1E1E";
-  //const lightC = "#181818";
+  const isLg = useMediaQuery(useTheme().breakpoints.up("lg"));
+
   const news: News[] = [
     {
       title:
@@ -30,20 +42,36 @@ const NewsPage = () => {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ backgroundColor: darkC, paddingBottom: 20 }}>
+    <Container
+      maxWidth="lg"
+      sx={{
+        backgroundColor: theme.background,
+        paddingBottom: { xs: 10, lg: 20 },
+      }}
+    >
       <Box display={"flex"} flexDirection={"row"} paddingBottom={2}>
-        <Image src={"./logo.svg"} alt="temp" width={80} height={80}></Image>
+        <Image src={"./logo.svg"} alt="logo" width={80} height={80}></Image>
         <Box paddingLeft={3}>
-          <Typography variant="h5" color="white" sx={{ fontWeight: "bold" }}>
+          <Typography
+            variant="h5"
+            color={theme.heading}
+            sx={{ fontWeight: "bold" }}
+          >
             Valorant esports news
           </Typography>
-          <Typography variant="body1" color="grey">
+          <Typography variant="body1" color={theme.text}>
             Read up on the latest in Valorant esports.
           </Typography>
         </Box>
       </Box>
       {/* Two columns section */}
-      <Box sx={{ display: "flex", flexDirection: "row", gap: cGap }}>
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", lg: "row" },
+          gap: cGap,
+        }}
+      >
         {/* Left col */}
         <Box
           sx={{
@@ -79,8 +107,7 @@ const NewsPage = () => {
           }}
         >
           <NewsStory></NewsStory>
-
-          <MatchList></MatchList>
+          {isLg ? <MatchList></MatchList> : null}
         </Box>
       </Box>
     </Container>

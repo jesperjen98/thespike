@@ -1,16 +1,18 @@
 "use client";
 import { Box, Button, Fade, Typography } from "@mui/material";
 import { ReactElement, useState } from "react";
+import { theme } from "../theme";
 
 type NavButtonProps = {
   name: string;
+  inDropDown?: Boolean;
   icon: {
     icon: ReactElement;
     hover: ReactElement;
   };
 };
 
-// Change icon: {icon, hover} to something else, icon: {standard, hover}?
+// FIXME: Change icon: {icon, hover} to something else, icon: {standard, hover}?
 const NavButton = ({ name, icon }: NavButtonProps) => {
   const [isHover, setIsHover] = useState(false);
   const fadeInTime = 500;
@@ -21,22 +23,24 @@ const NavButton = ({ name, icon }: NavButtonProps) => {
       onMouseLeave={() => setIsHover(false)}
       variant="contained"
       sx={{
+        minWidth: 2,
+        width: { xs: "100%", lg: "auto" },
         display: "flex",
         justifyContent: "start",
-        bgcolor: "transparent",
+        bgcolor: theme.main,
       }}
     >
       {/* 
 
        */}
       <Box display={"flex"}>
-        <Box position={"absolute"}>
-          <Fade timeout={fadeInTime} in={isHover}>
+        <Box position={"absolute"} lineHeight={0}>
+          <Fade timeout={fadeInTime} in={!isHover}>
             {icon.icon}
           </Fade>
         </Box>
-        <Box>
-          <Fade timeout={fadeInTime} in={!isHover}>
+        <Box lineHeight={0}>
+          <Fade timeout={fadeInTime} in={isHover}>
             {icon.hover}
           </Fade>
         </Box>
@@ -44,10 +48,10 @@ const NavButton = ({ name, icon }: NavButtonProps) => {
 
       <Typography
         fontSize={20}
-        color={isHover ? "#ffedf0" : "white"}
+        color={isHover ? theme.highlight : theme.heading}
         fontWeight={"bold"}
         sx={{
-          marginLeft: isHover ? 2.5 : 1,
+          marginLeft: { xs: 1, lg: isHover ? 2 : 1 },
           marginY: 1,
           transition: "margin 0.5s, color 0.5s",
         }}

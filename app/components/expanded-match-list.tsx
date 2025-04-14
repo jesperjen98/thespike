@@ -1,32 +1,27 @@
 import { Refresh } from "@mui/icons-material";
-import { Button, Typography, Box } from "@mui/material";
-import React from "react";
+import { Box, Button, Typography } from "@mui/material";
+import { theme } from "../theme";
 import ExpandedMatch from "./expanded-match";
 
 const ExpandedMatchList = () => {
-  const lightC = "#1E1E1E";
-  // const darkC = "#181818";
-  const mainC = "#F04D59";
-  //const [isHover, setIsHover] = useState(false);
-
   return (
     <Box
       sx={{
         width: "md",
-        bgcolor: lightC,
+        bgcolor: theme.main,
         display: "flex",
         flexDirection: "column",
-        padding: "5px",
+        padding: 2,
         gap: 1,
         flex: 1,
       }}
     >
-      <Box sx={{ padding: 2 }}>
-        <Typography fontWeight={"bold"} variant="h5" color="white">
+      <Box>
+        <Typography fontWeight={"bold"} variant="h5" color={theme.heading}>
           Masters Bangkok
         </Typography>
-        <Typography fontWeight={"bold"} variant="body1" color={mainC}>
-          Today{" "}
+        <Typography fontWeight={"bold"} variant="body1" color={theme.highlight}>
+          Today
         </Typography>
       </Box>
       <ExpandedMatch></ExpandedMatch>
@@ -42,7 +37,11 @@ const ExpandedMatchList = () => {
         justifyContent={"center"}
       >
         <Button
-          sx={{ fontWeight: "bold", color: "white", bgcolor: mainC }}
+          sx={{
+            fontWeight: "bold",
+            color: theme.heading,
+            bgcolor: theme.highlight,
+          }}
           variant="contained"
         >
           Load More
