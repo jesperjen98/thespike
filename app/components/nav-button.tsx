@@ -5,7 +5,6 @@ import { theme } from "../theme";
 
 type NavButtonProps = {
   name: string;
-  inDropDown?: Boolean;
   icon: {
     icon: ReactElement;
     hover: ReactElement;
