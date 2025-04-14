@@ -57,7 +57,7 @@ const NavDropdown = () => {
               width: "100%",
             }}
           >
-            <NavButton name={item.name} icon={item.icon} inDropDown={true} />
+            <NavButton name={item.name} icon={item.icon} />
           </MenuItem>
         ))}
       </Menu>
