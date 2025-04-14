@@ -9,7 +9,7 @@ import { theme } from "../theme";
 
 const MatchesPage = () => {
   const [isHover, setIsHover] = useState(false);
-  const isLg = useMediaQuery(useTheme().breakpoints.up("lg"));
+  const isSm = useMediaQuery(useTheme().breakpoints.up("sm"));
 
   useEffect(() => {
     Aos.init({});
@@ -64,9 +64,9 @@ const MatchesPage = () => {
           }}
         >
           <RegionList />
-          {isLg ? <ExpandedMatchList /> : null}
+          {isSm ? <ExpandedMatchList /> : null}
         </Paper>
-        {isLg ? null : (
+        {isSm ? null : (
           <Box paddingTop={2}>
             <MatchList />
           </Box>

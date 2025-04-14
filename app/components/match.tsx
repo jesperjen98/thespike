@@ -33,18 +33,24 @@ const Match = () => {
         <Box
           display={"flex"}
           flexDirection={"row"}
-          justifyContent="space-around"
           alignItems="center"
+          width={"100%"}
           sx={{
             opacity: isHover ? 0 : 1,
             transition: "opacity 0.3s",
           }}
         >
-          <Box display={"flex"} gap={1} paddingY={1} alignItems={"center"}>
+          <Box
+            padding={1}
+            width={"100%"}
+            display={"flex"}
+            paddingY={1}
+            justifyContent="space-between"
+            alignItems={"center"}
+          >
             <Typography fontWeight={"bold"} color={theme.heading}>
               {time}
             </Typography>
-
             <Typography fontWeight={"bold"} color={theme.heading}>
               TLN
             </Typography>
